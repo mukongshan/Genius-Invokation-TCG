@@ -1,0 +1,3 @@
+D:/Code/C/project/Genius_Invokation_TCG/src/cmake-build-debug/CMakeFiles/Genius_Invokation_TCG.dir
+D:/Code/C/project/Genius_Invokation_TCG/src/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Code/C/project/Genius_Invokation_TCG/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir

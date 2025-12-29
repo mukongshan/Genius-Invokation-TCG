@@ -1,0 +1,93 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"D:/Code/SDL/SDL2/mingw(CLion+VSC)/SDL2-2.26.0-allinone/x86_64-w64-mingw32/include",
+						"D:/Code/CLion 2023.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include",
+						"D:/Code/CLion 2023.2.1/bin/mingw/include",
+						"D:/Code/CLion 2023.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed",
+						"D:/Code/CLion 2023.2.1/bin/mingw/x86_64-w64-mingw32/include",
+						"/MinGW/include"
+					],
+					"linkDirectories" : [],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : []
+				},
+				"path" : "D:/Code/CLion 2023.2.1/bin/mingw/bin/gcc.exe",
+				"version" : "13.1.0"
+			},
+			"language" : "C",
+			"sourceFileExtensions" : 
+			[
+				"c",
+				"m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"D:/Code/CLion 2023.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
+						"D:/Code/CLion 2023.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
+						"D:/Code/CLion 2023.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
+						"D:/Code/CLion 2023.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include",
+						"D:/Code/CLion 2023.2.1/bin/mingw/include",
+						"D:/Code/CLion 2023.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed",
+						"D:/Code/CLion 2023.2.1/bin/mingw/x86_64-w64-mingw32/include",
+						"/MinGW/include"
+					],
+					"linkDirectories" : [],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : []
+				},
+				"path" : "D:/Code/CLion 2023.2.1/bin/mingw/bin/g++.exe",
+				"version" : "13.1.0"
+			},
+			"language" : "CXX",
+			"sourceFileExtensions" : 
+			[
+				"C",
+				"M",
+				"c++",
+				"cc",
+				"cpp",
+				"cxx",
+				"mm",
+				"mpp",
+				"CPP",
+				"ixx",
+				"cppm"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"implicit" : {},
+				"path" : "D:/Code/CLion 2023.2.1/bin/mingw/bin/windres.exe"
+			},
+			"language" : "RC",
+			"sourceFileExtensions" : 
+			[
+				"rc",
+				"RC"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

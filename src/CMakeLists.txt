@@ -1,0 +1,11 @@
+add_executable(Genius_Invokation_TCG_2
+        main.c
+        game.c
+        utils/input.c
+        utils/audio.c
+        utils/display.c
+        utils/word.c
+        choice.c
+        choice.c
+        role.c
+)

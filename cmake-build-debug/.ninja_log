@@ -1,0 +1,12 @@
+# ninja log v6
+11	761	7875128912513625	src/CMakeFiles/Genius_Invokation_TCG_2.dir/game.c.obj	62acddfbb753789e
+26	778	7875128912665644	src/CMakeFiles/Genius_Invokation_TCG_2.dir/utils/audio.c.obj	a4b4e9d84722de05
+3	780	7875128912422065	src/CMakeFiles/Genius_Invokation_TCG_2.dir/main.c.obj	1a550d7d09a467c7
+18	800	7875128912579322	src/CMakeFiles/Genius_Invokation_TCG_2.dir/utils/input.c.obj	b73b7b32671e73d
+53	801	7875128912936609	src/CMakeFiles/Genius_Invokation_TCG_2.dir/choice.c.obj	5d2e0a36d7cf4880
+45	832	7875128912844412	src/CMakeFiles/Genius_Invokation_TCG_2.dir/utils/word.c.obj	ab7ae0d8aabf4d84
+36	846	7875128912757527	src/CMakeFiles/Genius_Invokation_TCG_2.dir/utils/display.c.obj	2fd4eef1a37973ce
+63	859	7875128913029989	src/CMakeFiles/Genius_Invokation_TCG_2.dir/role.c.obj	e10ceb0e6f3b503c
+860	1076	7875128920999893	src/Genius_Invokation_TCG_2.exe	26f069b361ee21a8
+5	697	7875130501527818	src/CMakeFiles/Genius_Invokation_TCG_2.dir/utils/display.c.obj	2fd4eef1a37973ce
+698	1017	7875130508459258	src/Genius_Invokation_TCG_2.exe	26f069b361ee21a8
