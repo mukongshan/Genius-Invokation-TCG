@@ -1,14 +1,23 @@
 #include "utils/word.h"
+#include "utils/layout.h"
 
 SDL_Color color_HP = {255, 64, 64, 0};
+static TTF_Font* g_font = NULL;
 
 void Init_Text()
 {
-    app.font = TTF_OpenFont("..\\..\\res\\typeface\\MTCORSVA.TTF",128);
-    if (app.font==NULL){
-        SDL_Log("TTF_OpenFont: %s",TTF_GetError());
+    // 使用布局系统获取缩放后的字体大小
+    int font_size = Layout_GetFontSize(128);
+    g_font = TTF_OpenFont("..\\..\\res\\typeface\\MTCORSVA.TTF", font_size);
+    if (g_font == NULL) {
+        // 如果失败，尝试使用默认大小
+        g_font = TTF_OpenFont("..\\..\\res\\typeface\\MTCORSVA.TTF", 128);
+    }
+    if (g_font == NULL) {
+        SDL_Log("TTF_OpenFont: %s", TTF_GetError());
         return;
     }
+    app.font = g_font;
 }
 
 static void Draw_Text(SDL_Rect rect)
@@ -46,21 +55,25 @@ void Text_Begin()
     app.txt_surf=NULL;
     SDL_Color white = {255, 255, 255, 0};
     app.txt_surf = TTF_RenderText_Solid(app.font,"Left Button to Begin",white);
-    SDL_Rect begin={850,1450,900,180};
+    TextLayout* text_layout = Layout_GetTextLayout();
+    // 使用continue_prompt位置作为开始文本位置
+    SDL_Rect begin = text_layout->continue_prompt;
+    begin.y = (int)(begin.y * 0.98f);  // 稍微上移
     Draw_Text(begin);
 }
 
 void Text_Preparartion()
 {
+    TextLayout* text_layout = Layout_GetTextLayout();
     SDL_FreeSurface(app.txt_surf);
     app.txt_surf=NULL;
     SDL_Color white = {80, 128, 255, 0};
     app.txt_surf = TTF_RenderText_Solid(app.font,"Return to Continue",white);
-    SDL_Rect Continue={830,1500,940,180};
-    Draw_Text(Continue);
+    Draw_Text(text_layout->continue_prompt);
     SDL_FreeSurface(app.txt_surf);
     app.txt_surf = TTF_RenderText_Solid(app.font,"Left Button to Choose",white);
-    SDL_Rect Continue2={830,700,940,180};
+    SDL_Rect Continue2 = text_layout->round_end;
+    Continue2.y = (int)(Continue2.y * 0.42f);  // 调整到合适位置
     Draw_Text(Continue2);
 }
 
@@ -71,43 +84,45 @@ void Text_Fighting()
         app.txt_surf = NULL;
         SDL_Color white = {0, 0, 255, 0};
         app.txt_surf = TTF_RenderText_Solid(app.font, "Fighting", white);
-        SDL_Rect Fighting = {roles[selection].x, roles[selection].y - 80, 120, 80};
+        TextLayout* text_layout = Layout_GetTextLayout();
+        SDL_Rect Fighting = {roles[selection].x + text_layout->fighting_label.x, 
+                            roles[selection].y + text_layout->fighting_label.y, 
+                            text_layout->fighting_label.w, text_layout->fighting_label.h};
         Draw_Text(Fighting);
     }
 }
 
 void Text_Round()
 {
+    TextLayout* text_layout = Layout_GetTextLayout();
     SDL_FreeSurface(app.txt_surf);
     app.txt_surf=NULL;
     SDL_Color color = {180, 32, 64, 0};
     app.txt_surf = TTF_RenderText_Solid(app.font, "Round End", color);
-    SDL_Rect rect={1100,725,270,180};
-    Draw_Text(rect);
+    Draw_Text(text_layout->round_end);
     SDL_FreeSurface(app.txt_surf);
     app.txt_surf = TTF_RenderText_Solid(app.font, "Press Return to Continue", color);
-    SDL_Rect rect2={925,1480,720,180};
-    Draw_Text(rect2);
+    Draw_Text(text_layout->continue_prompt);
 }
 
 void Text_Points()
 {
+    TextLayout* text_layout = Layout_GetTextLayout();
+    
     SDL_FreeSurface(app.txt_surf);
     app.txt_surf=NULL;
     char point[16]="Your Points: ";
     Transform(point,points_1);
     SDL_Color color = {128, 255, 64, 0};
     app.txt_surf = TTF_RenderText_Solid(app.font,point,color);
-    SDL_Rect rect={1860,220,420,60};
-    Draw_Text(rect);
+    Draw_Text(text_layout->points_player);
 
     SDL_FreeSurface(app.txt_surf);
     app.txt_surf=NULL;
     char stack[16]="AI's Points: ";
     Transform(stack,points_0);
     app.txt_surf = TTF_RenderText_Solid(app.font,stack,color);
-    SDL_Rect rect1={1860,300,420,60};
-    Draw_Text(rect1);
+    Draw_Text(text_layout->points_ai);
 }
 
 void Text_HP(Role role)
@@ -116,15 +131,19 @@ void Text_HP(Role role)
     app.txt_surf=NULL;
     if (role.ischosen)
     {
+        TextLayout* text_layout = Layout_GetTextLayout();
         if (role.HP > 0) {
             char hp[3] = {'\0'};
             Transform(hp, role.HP);
             app.txt_surf = TTF_RenderText_Solid(app.font, hp, color_HP);
-            SDL_Rect HP_1 = {role.x + 195, role.y - 60, 75, 60};
+            // 使用布局系统的相对位置
+            SDL_Rect HP_1 = {role.x + text_layout->hp.x, role.y + text_layout->hp.y, 
+                            text_layout->hp.w, text_layout->hp.h};
             Draw_Text(HP_1);
         } else {
             app.txt_surf = TTF_RenderText_Solid(app.font, "Fail", color_HP);
-            SDL_Rect HP_1 = {role.x + 195, role.y - 60, 120, 60};
+            SDL_Rect HP_1 = {role.x + text_layout->hp.x, role.y + text_layout->hp.y, 
+                            (int)(text_layout->hp.w * 1.6f), text_layout->hp.h};
             Draw_Text(HP_1);
         }
     }
@@ -139,7 +158,9 @@ void Text_Energy(Role role)
         app.txt_surf=NULL;
         SDL_Color color = {240, 120, 120, 0};
         app.txt_surf = TTF_RenderText_Solid(app.font, pp, color);
-        SDL_Rect PP = {role.x + 280, role.y + 10, 55, 50};
+        TextLayout* text_layout = Layout_GetTextLayout();
+        SDL_Rect PP = {role.x + text_layout->energy.x, role.y + text_layout->energy.y, 
+                      text_layout->energy.w, text_layout->energy.h};
         Draw_Text(PP);
     }
 }
@@ -182,7 +203,10 @@ void Text_Win()
     app.txt_surf=NULL;
     SDL_Color white = {255, 0, 64, 0};
     app.txt_surf = TTF_RenderText_Solid(app.font,"Win!",white);
-    SDL_Rect begin={1000,200,600,180};
+    TextLayout* text_layout = Layout_GetTextLayout();
+    SDL_Rect begin = text_layout->round_end;
+    begin.y = (int)(begin.y * 0.28f);  // 调整到顶部
+    begin.w = (int)(begin.w * 2.2f);
     Draw_Text(begin);
 }
 
@@ -192,7 +216,10 @@ void Text_Lose()
     app.txt_surf=NULL;
     SDL_Color color = {255, 0, 64, 0};
     app.txt_surf = TTF_RenderText_Solid(app.font,"Lose!",color);
-    SDL_Rect begin={1000,200,600,180};
+    TextLayout* text_layout = Layout_GetTextLayout();
+    SDL_Rect begin = text_layout->round_end;
+    begin.y = (int)(begin.y * 0.28f);  // 调整到顶部
+    begin.w = (int)(begin.w * 2.2f);
     Draw_Text(begin);
 }
 
@@ -241,10 +268,24 @@ void Text_Reaction(int debuff)
         default:
             return;
     }
-    SDL_Rect rect={1020,725,510,180};
+    TextLayout* text_layout = Layout_GetTextLayout();
+    // 使用round_end位置作为反应文本位置（可以后续优化）
+    SDL_Rect rect = text_layout->round_end;
+    rect.w = (int)(rect.w * 1.9f);  // 反应文本稍宽
     Draw_Text(rect);
 }
 
+
+// 辅助函数：获取技能文本位置
+static SDL_Rect Get_Skill_Text_Rect(int y_offset) {
+    TextLayout* text_layout = Layout_GetTextLayout();
+    SDL_Rect rect = text_layout->round_end;
+    rect.x = (int)(rect.x * 0.36f);  // 左侧
+    rect.y = (int)(rect.y * y_offset);
+    rect.w = (int)(rect.w * 1.0f);
+    rect.h = (int)(rect.h * 0.5f);
+    return rect;
+}
 
 void Text_Normal_Attack_0()
 {
@@ -252,7 +293,7 @@ void Text_Normal_Attack_0()
     app.txt_surf=NULL;
     SDL_Color color = {60, 200, 160, 0};
     app.txt_surf = TTF_RenderText_Solid(app.font,"Normal Attack!",color);
-    SDL_Rect rect={400,700,280,90};
+    SDL_Rect rect = Get_Skill_Text_Rect(0.96f);
     Draw_Text(rect);
 }
 void Text_Normal_Attack_1()
@@ -261,7 +302,7 @@ void Text_Normal_Attack_1()
     app.txt_surf=NULL;
     SDL_Color color = {60, 200, 160, 0};
     app.txt_surf = TTF_RenderText_Solid(app.font,"Normal Attack!",color);
-    SDL_Rect rect={400,900,280,90};
+    SDL_Rect rect = Get_Skill_Text_Rect(1.24f);
     Draw_Text(rect);
 }
 void Text_Elemental_Skill()
@@ -270,7 +311,7 @@ void Text_Elemental_Skill()
     app.txt_surf=NULL;
     SDL_Color color = {60, 200, 160, 0};
     app.txt_surf = TTF_RenderText_Solid(app.font,"Elemental Skill!",color);
-    SDL_Rect rect={400,900,320,90};
+    SDL_Rect rect = Get_Skill_Text_Rect(1.24f);
     Draw_Text(rect);
 }
 void Text_Elemental_Skill_1()
@@ -279,7 +320,7 @@ void Text_Elemental_Skill_1()
     app.txt_surf=NULL;
     SDL_Color color = {60, 200, 160, 0};
     app.txt_surf = TTF_RenderText_Solid(app.font,"Elemental Skill 1!",color);
-    SDL_Rect rect={400,700,360,90};
+    SDL_Rect rect = Get_Skill_Text_Rect(0.96f);
     Draw_Text(rect);
 }
 void Text_Elemental_Skill_2()
@@ -288,7 +329,7 @@ void Text_Elemental_Skill_2()
     app.txt_surf=NULL;
     SDL_Color color = {60, 200, 160, 0};
     app.txt_surf = TTF_RenderText_Solid(app.font,"Elemental Skill 2!",color);
-    SDL_Rect rect={400,700,360,90};
+    SDL_Rect rect = Get_Skill_Text_Rect(0.96f);
     Draw_Text(rect);
 }
 void Text_Elemental_Burst_0()
@@ -297,7 +338,7 @@ void Text_Elemental_Burst_0()
     app.txt_surf=NULL;
     SDL_Color color = {60, 200, 160, 0};
     app.txt_surf = TTF_RenderText_Solid(app.font,"Elemental Burst!",color);
-    SDL_Rect rect={400,700,320,90};
+    SDL_Rect rect = Get_Skill_Text_Rect(0.96f);
     Draw_Text(rect);
 }
 void Text_Elemental_Burst_1()
@@ -306,7 +347,7 @@ void Text_Elemental_Burst_1()
     app.txt_surf=NULL;
     SDL_Color color = {60, 200, 160, 0};
     app.txt_surf = TTF_RenderText_Solid(app.font,"Elemental Burst!",color);
-    SDL_Rect rect={400,900,320,90};
+    SDL_Rect rect = Get_Skill_Text_Rect(1.24f);
     Draw_Text(rect);
 }
 

@@ -1,11 +1,14 @@
-add_executable(Genius_Invokation_TCG_2
+add_executable(Genius-Invokation-TCG
         main.c
         game.c
+        game_state.c
+        elemental_reaction.c
         utils/input.c
         utils/audio.c
         utils/display.c
         utils/word.c
-        choice.c
+        utils/layout.c
+        utils/resource.c
         choice.c
         role.c
 )

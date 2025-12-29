@@ -1,4 +1,6 @@
 #include "role.h"
+#include "game_state.h"
+#include "utils/layout.h"
 
 Role *roles;
 Summons *summons;
@@ -13,21 +15,37 @@ int points_1=0;
 int points_0=0;
 int isview=0;
 
+// 同步状态管理器的点数到全局变量（向后兼容）
+static void Sync_Points(void) {
+    points_1 = GameState_GetPlayerPoints();
+    points_0 = GameState_GetEnemyPoints();
+}
+
 
 void Init_Roles()
 {
     roles =malloc (NUM_MEMBERS*sizeof (Role));
-    roles[0]=(Role){true,true,0,0,30,0,no_element,no_debuff,0,0,1125,200};
-    roles[1]=(Role){false,false,1,1,10,0,no_element,no_debuff,0,0,725,1000};
-    roles[2]=(Role){false,false,1,2,10,0,no_element,no_debuff,0,0,1125,1000};
-    roles[3]=(Role){false,false,1,3,10,0,no_element,no_debuff,0,0,1525,1000};
+    
+    // 使用布局系统获取角色位置
+    RolePosition pos0 = Layout_GetRolePosition(0);
+    RolePosition pos1 = Layout_GetRolePosition(1);
+    RolePosition pos2 = Layout_GetRolePosition(2);
+    RolePosition pos3 = Layout_GetRolePosition(3);
+    
+    roles[0]=(Role){true,true,0,0,30,0,no_element,no_debuff,0,0,pos0.x,pos0.y};
+    roles[1]=(Role){false,false,1,1,10,0,no_element,no_debuff,0,0,pos1.x,pos1.y};
+    roles[2]=(Role){false,false,1,2,10,0,no_element,no_debuff,0,0,pos2.x,pos2.y};
+    roles[3]=(Role){false,false,1,3,10,0,no_element,no_debuff,0,0,pos3.x,pos3.y};
 }
 
 void Init_Summons()
 {
     summons = malloc(NUM_SUMMONS*sizeof (Summons));
-    summons[0]=(Summons){300,200,0,false};
-    summons[1]=(Summons){500,200,0,false};
+    
+    // 使用布局系统获取召唤物位置
+    LayoutConfig* config = Layout_GetConfig();
+    summons[0]=(Summons){config->summons[0].x, config->summons[0].y, 0, false};
+    summons[1]=(Summons){config->summons[1].x, config->summons[1].y, 0, false};
 }
 
 void Quit_Roles()
@@ -112,32 +130,38 @@ void Do_Bennett()
             Text_Fighting();
             SDL_RenderPresent(app.renderer);
         }
-        if (app.keyboard[SDL_SCANCODE_1] && event.type==SDL_KEYDOWN && points_1>=3){
-            points_1-=3;
+        Sync_Points();  // 同步点数
+        if (app.keyboard[SDL_SCANCODE_1] && event.type==SDL_KEYDOWN && GameState_ConsumePlayerPoints(3)){
+            points_1 = GameState_GetPlayerPoints();
             Bennett_Attack();
+            GameState_SetPlayerActionDone(true);
             isact_1=1;
             if (roles[1].energy<2) {
                 roles[1].energy++;
             }
             After_Normal_Attack_Enhencement();
             return;
-        } else if (app.keyboard[SDL_SCANCODE_2] && event.type==SDL_KEYDOWN && points_1>=3){
-            points_1-=3;
+        } else if (app.keyboard[SDL_SCANCODE_2] && event.type==SDL_KEYDOWN && GameState_ConsumePlayerPoints(3)){
+            points_1 = GameState_GetPlayerPoints();
             Bennett_Skill();
+            GameState_SetPlayerActionDone(true);
             isact_1=1;
             if (roles[1].energy<2) {
                 roles[1].energy++;
             }
             After_Skill_Enhencement();
             return;
-        }else if (app.keyboard[SDL_SCANCODE_3] && event.type==SDL_KEYDOWN && points_1>=4 && roles[1].energy>=2){
-            points_1-=4;
+        }else if (app.keyboard[SDL_SCANCODE_3] && event.type==SDL_KEYDOWN && GameState_ConsumePlayerPoints(4) && roles[1].energy>=2){
+            points_1 = GameState_GetPlayerPoints();
             Bennett_Ultimate();
+            GameState_SetPlayerActionDone(true);
             isact_1=1;
             roles[1].energy=0;
             After_Ultimate_Enhencement();
             return;
         } else if (app.keyboard[SDL_SCANCODE_SPACE] && event.type==SDL_KEYDOWN){
+            GameState_SetPlayerActionDone(true);
+            GameState_EndPlayerRound();
             isact_1=1;
             isround_1=1;
             return;
@@ -396,51 +420,61 @@ void Liu_Jin_Huo_Guang()
 
 void Do_Maguu_Kenki()
 {
-    if (points_0>=3 && roles[choice_i+1].HP<=2){
-        points_0-=3;
+    Sync_Points();
+    int choice_i = GameState_GetChoiceIndex();
+    
+    if (GameState_ConsumeEnemyPoints(3) && roles[choice_i+1].HP<=2){
+        points_0 = GameState_GetEnemyPoints();
         Maguu_Kenki_Attack();
         if (roles[0].energy<3) {
             roles[0].energy++;
         }
         return;
     }
-    if (roles[0].energy>=3 && points_0>=3){
-        points_0-=3;
+    if (roles[0].energy>=3 && GameState_ConsumeEnemyPoints(3)){
+        points_0 = GameState_GetEnemyPoints();
         Maguu_Kenki_Ultimate();
         roles[0].energy=0;
+        return;
     }
-    if (summons[1].PP<=0 && points_0>=3){
-        points_0-=3;
+    if (summons[1].PP<=0 && GameState_ConsumeEnemyPoints(3)){
+        points_0 = GameState_GetEnemyPoints();
         Maguu_Kenki_Skill2();
 
         if (roles[0].energy<3) {
             roles[0].energy++;
         }
-        if (points_0<3)
+        if (GameState_GetEnemyPoints()<3) {
+            GameState_EndEnemyRound();
             isround_0=1;
+        }
         return;
     }
-    if (summons[0].PP<=0 && points_0>=3){
-        points_0-=3;
+    if (summons[0].PP<=0 && GameState_ConsumeEnemyPoints(3)){
+        points_0 = GameState_GetEnemyPoints();
         Maguu_Kenki_Skill1();
 
         if (roles[0].energy<3) {
             roles[0].energy++;
         }
-        if (points_0<3)
+        if (GameState_GetEnemyPoints()<3) {
+            GameState_EndEnemyRound();
             isround_0=1;
+        }
         return;
     }
-    if (points_0>=3){
-        points_0-=3;
+    if (GameState_ConsumeEnemyPoints(3)){
+        points_0 = GameState_GetEnemyPoints();
         Maguu_Kenki_Attack();
         if (roles[0].energy<3) {
             roles[0].energy++;
         }
         return;
     }
-    if (points_0<3)
+    if (GameState_GetEnemyPoints()<3) {
+        GameState_EndEnemyRound();
         isround_0=1;
+    }
 }
 
 void Maguu_Kenki_Attack()

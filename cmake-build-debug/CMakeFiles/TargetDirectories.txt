@@ -1,5 +1,5 @@
-D:/All_of_mine/C/project/Genius_Invokation_TCG_2/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/All_of_mine/C/project/Genius_Invokation_TCG_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-D:/All_of_mine/C/project/Genius_Invokation_TCG_2/cmake-build-debug/src/CMakeFiles/Genius_Invokation_TCG_2.dir
-D:/All_of_mine/C/project/Genius_Invokation_TCG_2/cmake-build-debug/src/CMakeFiles/edit_cache.dir
-D:/All_of_mine/C/project/Genius_Invokation_TCG_2/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir
+D:/All_of_mine/大学/项目/Genius-Invokation-TCG/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/All_of_mine/大学/项目/Genius-Invokation-TCG/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/All_of_mine/大学/项目/Genius-Invokation-TCG/cmake-build-debug/src/CMakeFiles/Genius-Invokation-TCG.dir
+D:/All_of_mine/大学/项目/Genius-Invokation-TCG/cmake-build-debug/src/CMakeFiles/edit_cache.dir
+D:/All_of_mine/大学/项目/Genius-Invokation-TCG/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir

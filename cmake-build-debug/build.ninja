@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: Genius_Invokation_TCG_2
+# Project: Genius_Invokation_TCG
 # Configurations: Debug
 # =============================================================================
 
@@ -39,13 +39,13 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = D$:/All_of_mine/C/project/Genius_Invokation_TCG_2/cmake-build-debug/
+cmake_ninja_workdir = D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/cmake-build-debug/
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\All_of_mine\C\project\Genius_Invokation_TCG_2\cmake-build-debug && "D:\All_of_mine\IDE\CLion 2025.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\All_of_mine\大学\项目\Genius-Invokation-TCG\cmake-build-debug && "D:\All_of_mine\IDE\CLion 2025.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -56,7 +56,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\All_of_mine\C\project\Genius_Invokation_TCG_2\cmake-build-debug && "D:\All_of_mine\IDE\CLion 2025.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\All_of_mine\C\project\Genius_Invokation_TCG_2 -BD:\All_of_mine\C\project\Genius_Invokation_TCG_2\cmake-build-debug"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\All_of_mine\大学\项目\Genius-Invokation-TCG\cmake-build-debug && "D:\All_of_mine\IDE\CLion 2025.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\All_of_mine\大学\项目\Genius-Invokation-TCG -BD:\All_of_mine\大学\项目\Genius-Invokation-TCG\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -65,124 +65,139 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# D:/All_of_mine/C/project/Genius_Invokation_TCG_2/CMakeLists.txt
+# D:/All_of_mine/大学/项目/Genius-Invokation-TCG/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
-# Object build statements for EXECUTABLE target Genius_Invokation_TCG_2
+# Object build statements for EXECUTABLE target Genius-Invokation-TCG
 
 
 #############################################
-# Order-only phony target for Genius_Invokation_TCG_2
+# Order-only phony target for Genius-Invokation-TCG
 
-build cmake_object_order_depends_target_Genius_Invokation_TCG_2: phony || .
+build cmake_object_order_depends_target_Genius-Invokation-TCG: phony || .
 
-build src/CMakeFiles/Genius_Invokation_TCG_2.dir/main.c.obj: C_COMPILER__Genius_Invokation_TCG_2_unscanned_Debug D$:/All_of_mine/C/project/Genius_Invokation_TCG_2/src/main.c || cmake_object_order_depends_target_Genius_Invokation_TCG_2
+build src/CMakeFiles/Genius-Invokation-TCG.dir/main.c.obj: C_COMPILER__Genius-Invokation-TCG_unscanned_Debug D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/src/main.c || cmake_object_order_depends_target_Genius-Invokation-TCG
   CONFIG = Debug
-  DEP_FILE = src\CMakeFiles\Genius_Invokation_TCG_2.dir\main.c.obj.d
+  DEP_FILE = src\CMakeFiles\Genius-Invokation-TCG.dir\main.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -ID:/All_of_mine/C/project/Genius_Invokation_TCG_2/include
-  OBJECT_DIR = src\CMakeFiles\Genius_Invokation_TCG_2.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\Genius_Invokation_TCG_2.dir
-  TARGET_COMPILE_PDB = src\CMakeFiles\Genius_Invokation_TCG_2.dir\
-  TARGET_PDB = src\Genius_Invokation_TCG_2.pdb
+  INCLUDES = -ID:/All_of_mine/大学/项目/Genius-Invokation-TCG/include
+  OBJECT_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
 
-build src/CMakeFiles/Genius_Invokation_TCG_2.dir/game.c.obj: C_COMPILER__Genius_Invokation_TCG_2_unscanned_Debug D$:/All_of_mine/C/project/Genius_Invokation_TCG_2/src/game.c || cmake_object_order_depends_target_Genius_Invokation_TCG_2
+build src/CMakeFiles/Genius-Invokation-TCG.dir/game.c.obj: C_COMPILER__Genius-Invokation-TCG_unscanned_Debug D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/src/game.c || cmake_object_order_depends_target_Genius-Invokation-TCG
   CONFIG = Debug
-  DEP_FILE = src\CMakeFiles\Genius_Invokation_TCG_2.dir\game.c.obj.d
+  DEP_FILE = src\CMakeFiles\Genius-Invokation-TCG.dir\game.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -ID:/All_of_mine/C/project/Genius_Invokation_TCG_2/include
-  OBJECT_DIR = src\CMakeFiles\Genius_Invokation_TCG_2.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\Genius_Invokation_TCG_2.dir
-  TARGET_COMPILE_PDB = src\CMakeFiles\Genius_Invokation_TCG_2.dir\
-  TARGET_PDB = src\Genius_Invokation_TCG_2.pdb
+  INCLUDES = -ID:/All_of_mine/大学/项目/Genius-Invokation-TCG/include
+  OBJECT_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
 
-build src/CMakeFiles/Genius_Invokation_TCG_2.dir/utils/input.c.obj: C_COMPILER__Genius_Invokation_TCG_2_unscanned_Debug D$:/All_of_mine/C/project/Genius_Invokation_TCG_2/src/utils/input.c || cmake_object_order_depends_target_Genius_Invokation_TCG_2
+build src/CMakeFiles/Genius-Invokation-TCG.dir/game_state.c.obj: C_COMPILER__Genius-Invokation-TCG_unscanned_Debug D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/src/game_state.c || cmake_object_order_depends_target_Genius-Invokation-TCG
   CONFIG = Debug
-  DEP_FILE = src\CMakeFiles\Genius_Invokation_TCG_2.dir\utils\input.c.obj.d
+  DEP_FILE = src\CMakeFiles\Genius-Invokation-TCG.dir\game_state.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -ID:/All_of_mine/C/project/Genius_Invokation_TCG_2/include
-  OBJECT_DIR = src\CMakeFiles\Genius_Invokation_TCG_2.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\Genius_Invokation_TCG_2.dir\utils
-  TARGET_COMPILE_PDB = src\CMakeFiles\Genius_Invokation_TCG_2.dir\
-  TARGET_PDB = src\Genius_Invokation_TCG_2.pdb
+  INCLUDES = -ID:/All_of_mine/大学/项目/Genius-Invokation-TCG/include
+  OBJECT_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
 
-build src/CMakeFiles/Genius_Invokation_TCG_2.dir/utils/audio.c.obj: C_COMPILER__Genius_Invokation_TCG_2_unscanned_Debug D$:/All_of_mine/C/project/Genius_Invokation_TCG_2/src/utils/audio.c || cmake_object_order_depends_target_Genius_Invokation_TCG_2
+build src/CMakeFiles/Genius-Invokation-TCG.dir/elemental_reaction.c.obj: C_COMPILER__Genius-Invokation-TCG_unscanned_Debug D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/src/elemental_reaction.c || cmake_object_order_depends_target_Genius-Invokation-TCG
   CONFIG = Debug
-  DEP_FILE = src\CMakeFiles\Genius_Invokation_TCG_2.dir\utils\audio.c.obj.d
+  DEP_FILE = src\CMakeFiles\Genius-Invokation-TCG.dir\elemental_reaction.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -ID:/All_of_mine/C/project/Genius_Invokation_TCG_2/include
-  OBJECT_DIR = src\CMakeFiles\Genius_Invokation_TCG_2.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\Genius_Invokation_TCG_2.dir\utils
-  TARGET_COMPILE_PDB = src\CMakeFiles\Genius_Invokation_TCG_2.dir\
-  TARGET_PDB = src\Genius_Invokation_TCG_2.pdb
+  INCLUDES = -ID:/All_of_mine/大学/项目/Genius-Invokation-TCG/include
+  OBJECT_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
 
-build src/CMakeFiles/Genius_Invokation_TCG_2.dir/utils/display.c.obj: C_COMPILER__Genius_Invokation_TCG_2_unscanned_Debug D$:/All_of_mine/C/project/Genius_Invokation_TCG_2/src/utils/display.c || cmake_object_order_depends_target_Genius_Invokation_TCG_2
+build src/CMakeFiles/Genius-Invokation-TCG.dir/utils/input.c.obj: C_COMPILER__Genius-Invokation-TCG_unscanned_Debug D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/src/utils/input.c || cmake_object_order_depends_target_Genius-Invokation-TCG
   CONFIG = Debug
-  DEP_FILE = src\CMakeFiles\Genius_Invokation_TCG_2.dir\utils\display.c.obj.d
+  DEP_FILE = src\CMakeFiles\Genius-Invokation-TCG.dir\utils\input.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -ID:/All_of_mine/C/project/Genius_Invokation_TCG_2/include
-  OBJECT_DIR = src\CMakeFiles\Genius_Invokation_TCG_2.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\Genius_Invokation_TCG_2.dir\utils
-  TARGET_COMPILE_PDB = src\CMakeFiles\Genius_Invokation_TCG_2.dir\
-  TARGET_PDB = src\Genius_Invokation_TCG_2.pdb
+  INCLUDES = -ID:/All_of_mine/大学/项目/Genius-Invokation-TCG/include
+  OBJECT_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir\utils
 
-build src/CMakeFiles/Genius_Invokation_TCG_2.dir/utils/word.c.obj: C_COMPILER__Genius_Invokation_TCG_2_unscanned_Debug D$:/All_of_mine/C/project/Genius_Invokation_TCG_2/src/utils/word.c || cmake_object_order_depends_target_Genius_Invokation_TCG_2
+build src/CMakeFiles/Genius-Invokation-TCG.dir/utils/audio.c.obj: C_COMPILER__Genius-Invokation-TCG_unscanned_Debug D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/src/utils/audio.c || cmake_object_order_depends_target_Genius-Invokation-TCG
   CONFIG = Debug
-  DEP_FILE = src\CMakeFiles\Genius_Invokation_TCG_2.dir\utils\word.c.obj.d
+  DEP_FILE = src\CMakeFiles\Genius-Invokation-TCG.dir\utils\audio.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -ID:/All_of_mine/C/project/Genius_Invokation_TCG_2/include
-  OBJECT_DIR = src\CMakeFiles\Genius_Invokation_TCG_2.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\Genius_Invokation_TCG_2.dir\utils
-  TARGET_COMPILE_PDB = src\CMakeFiles\Genius_Invokation_TCG_2.dir\
-  TARGET_PDB = src\Genius_Invokation_TCG_2.pdb
+  INCLUDES = -ID:/All_of_mine/大学/项目/Genius-Invokation-TCG/include
+  OBJECT_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir\utils
 
-build src/CMakeFiles/Genius_Invokation_TCG_2.dir/choice.c.obj: C_COMPILER__Genius_Invokation_TCG_2_unscanned_Debug D$:/All_of_mine/C/project/Genius_Invokation_TCG_2/src/choice.c || cmake_object_order_depends_target_Genius_Invokation_TCG_2
+build src/CMakeFiles/Genius-Invokation-TCG.dir/utils/display.c.obj: C_COMPILER__Genius-Invokation-TCG_unscanned_Debug D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/src/utils/display.c || cmake_object_order_depends_target_Genius-Invokation-TCG
   CONFIG = Debug
-  DEP_FILE = src\CMakeFiles\Genius_Invokation_TCG_2.dir\choice.c.obj.d
+  DEP_FILE = src\CMakeFiles\Genius-Invokation-TCG.dir\utils\display.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -ID:/All_of_mine/C/project/Genius_Invokation_TCG_2/include
-  OBJECT_DIR = src\CMakeFiles\Genius_Invokation_TCG_2.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\Genius_Invokation_TCG_2.dir
-  TARGET_COMPILE_PDB = src\CMakeFiles\Genius_Invokation_TCG_2.dir\
-  TARGET_PDB = src\Genius_Invokation_TCG_2.pdb
+  INCLUDES = -ID:/All_of_mine/大学/项目/Genius-Invokation-TCG/include
+  OBJECT_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir\utils
 
-build src/CMakeFiles/Genius_Invokation_TCG_2.dir/role.c.obj: C_COMPILER__Genius_Invokation_TCG_2_unscanned_Debug D$:/All_of_mine/C/project/Genius_Invokation_TCG_2/src/role.c || cmake_object_order_depends_target_Genius_Invokation_TCG_2
+build src/CMakeFiles/Genius-Invokation-TCG.dir/utils/word.c.obj: C_COMPILER__Genius-Invokation-TCG_unscanned_Debug D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/src/utils/word.c || cmake_object_order_depends_target_Genius-Invokation-TCG
   CONFIG = Debug
-  DEP_FILE = src\CMakeFiles\Genius_Invokation_TCG_2.dir\role.c.obj.d
+  DEP_FILE = src\CMakeFiles\Genius-Invokation-TCG.dir\utils\word.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always
-  INCLUDES = -ID:/All_of_mine/C/project/Genius_Invokation_TCG_2/include
-  OBJECT_DIR = src\CMakeFiles\Genius_Invokation_TCG_2.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\Genius_Invokation_TCG_2.dir
-  TARGET_COMPILE_PDB = src\CMakeFiles\Genius_Invokation_TCG_2.dir\
-  TARGET_PDB = src\Genius_Invokation_TCG_2.pdb
+  INCLUDES = -ID:/All_of_mine/大学/项目/Genius-Invokation-TCG/include
+  OBJECT_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir\utils
+
+build src/CMakeFiles/Genius-Invokation-TCG.dir/utils/layout.c.obj: C_COMPILER__Genius-Invokation-TCG_unscanned_Debug D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/src/utils/layout.c || cmake_object_order_depends_target_Genius-Invokation-TCG
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\Genius-Invokation-TCG.dir\utils\layout.c.obj.d
+  FLAGS = -g -std=gnu99 -fdiagnostics-color=always
+  INCLUDES = -ID:/All_of_mine/大学/项目/Genius-Invokation-TCG/include
+  OBJECT_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir\utils
+
+build src/CMakeFiles/Genius-Invokation-TCG.dir/utils/resource.c.obj: C_COMPILER__Genius-Invokation-TCG_unscanned_Debug D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/src/utils/resource.c || cmake_object_order_depends_target_Genius-Invokation-TCG
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\Genius-Invokation-TCG.dir\utils\resource.c.obj.d
+  FLAGS = -g -std=gnu99 -fdiagnostics-color=always
+  INCLUDES = -ID:/All_of_mine/大学/项目/Genius-Invokation-TCG/include
+  OBJECT_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir\utils
+
+build src/CMakeFiles/Genius-Invokation-TCG.dir/choice.c.obj: C_COMPILER__Genius-Invokation-TCG_unscanned_Debug D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/src/choice.c || cmake_object_order_depends_target_Genius-Invokation-TCG
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\Genius-Invokation-TCG.dir\choice.c.obj.d
+  FLAGS = -g -std=gnu99 -fdiagnostics-color=always
+  INCLUDES = -ID:/All_of_mine/大学/项目/Genius-Invokation-TCG/include
+  OBJECT_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
+
+build src/CMakeFiles/Genius-Invokation-TCG.dir/role.c.obj: C_COMPILER__Genius-Invokation-TCG_unscanned_Debug D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/src/role.c || cmake_object_order_depends_target_Genius-Invokation-TCG
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\Genius-Invokation-TCG.dir\role.c.obj.d
+  FLAGS = -g -std=gnu99 -fdiagnostics-color=always
+  INCLUDES = -ID:/All_of_mine/大学/项目/Genius-Invokation-TCG/include
+  OBJECT_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target Genius_Invokation_TCG_2
+# Link build statements for EXECUTABLE target Genius-Invokation-TCG
 
 
 #############################################
-# Link the executable src\Genius_Invokation_TCG_2.exe
+# Link the executable src\Genius-Invokation-TCG.exe
 
-build src/Genius_Invokation_TCG_2.exe: C_EXECUTABLE_LINKER__Genius_Invokation_TCG_2_Debug src/CMakeFiles/Genius_Invokation_TCG_2.dir/main.c.obj src/CMakeFiles/Genius_Invokation_TCG_2.dir/game.c.obj src/CMakeFiles/Genius_Invokation_TCG_2.dir/utils/input.c.obj src/CMakeFiles/Genius_Invokation_TCG_2.dir/utils/audio.c.obj src/CMakeFiles/Genius_Invokation_TCG_2.dir/utils/display.c.obj src/CMakeFiles/Genius_Invokation_TCG_2.dir/utils/word.c.obj src/CMakeFiles/Genius_Invokation_TCG_2.dir/choice.c.obj src/CMakeFiles/Genius_Invokation_TCG_2.dir/role.c.obj
+build src/Genius-Invokation-TCG.exe: C_EXECUTABLE_LINKER__Genius-Invokation-TCG_Debug src/CMakeFiles/Genius-Invokation-TCG.dir/main.c.obj src/CMakeFiles/Genius-Invokation-TCG.dir/game.c.obj src/CMakeFiles/Genius-Invokation-TCG.dir/game_state.c.obj src/CMakeFiles/Genius-Invokation-TCG.dir/elemental_reaction.c.obj src/CMakeFiles/Genius-Invokation-TCG.dir/utils/input.c.obj src/CMakeFiles/Genius-Invokation-TCG.dir/utils/audio.c.obj src/CMakeFiles/Genius-Invokation-TCG.dir/utils/display.c.obj src/CMakeFiles/Genius-Invokation-TCG.dir/utils/word.c.obj src/CMakeFiles/Genius-Invokation-TCG.dir/utils/layout.c.obj src/CMakeFiles/Genius-Invokation-TCG.dir/utils/resource.c.obj src/CMakeFiles/Genius-Invokation-TCG.dir/choice.c.obj src/CMakeFiles/Genius-Invokation-TCG.dir/role.c.obj
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = -lmingw32  -lSDL2main  -lSDL2  -lSDL2_image  -lSDL2_ttf  -lSDL2_mixer  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = src\CMakeFiles\Genius_Invokation_TCG_2.dir
+  OBJECT_DIR = src\CMakeFiles\Genius-Invokation-TCG.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = src\CMakeFiles\Genius_Invokation_TCG_2.dir\
-  TARGET_FILE = src\Genius_Invokation_TCG_2.exe
-  TARGET_IMPLIB = src\libGenius_Invokation_TCG_2.dll.a
-  TARGET_PDB = src\Genius_Invokation_TCG_2.pdb
+  TARGET_FILE = src\Genius-Invokation-TCG.exe
+  TARGET_IMPLIB = src\libGenius-Invokation-TCG.dll.a
+  TARGET_PDB = Genius-Invokation-TCG.exe.dbg
 
 
 #############################################
 # Utility command for edit_cache
 
 build src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\All_of_mine\C\project\Genius_Invokation_TCG_2\cmake-build-debug\src && "D:\All_of_mine\IDE\CLion 2025.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\All_of_mine\大学\项目\Genius-Invokation-TCG\cmake-build-debug\src && "D:\All_of_mine\IDE\CLion 2025.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -193,7 +208,7 @@ build src/edit_cache: phony src/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\All_of_mine\C\project\Genius_Invokation_TCG_2\cmake-build-debug\src && "D:\All_of_mine\IDE\CLion 2025.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\All_of_mine\C\project\Genius_Invokation_TCG_2 -BD:\All_of_mine\C\project\Genius_Invokation_TCG_2\cmake-build-debug"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\All_of_mine\大学\项目\Genius-Invokation-TCG\cmake-build-debug\src && "D:\All_of_mine\IDE\CLion 2025.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\All_of_mine\大学\项目\Genius-Invokation-TCG -BD:\All_of_mine\大学\项目\Genius-Invokation-TCG\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -203,9 +218,9 @@ build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build Genius_Invokation_TCG_2: phony src/Genius_Invokation_TCG_2.exe
+build Genius-Invokation-TCG: phony src/Genius-Invokation-TCG.exe
 
-build Genius_Invokation_TCG_2.exe: phony src/Genius_Invokation_TCG_2.exe
+build Genius-Invokation-TCG.exe: phony src/Genius-Invokation-TCG.exe
 
 # =============================================================================
 # Folder targets.
@@ -213,16 +228,16 @@ build Genius_Invokation_TCG_2.exe: phony src/Genius_Invokation_TCG_2.exe
 # =============================================================================
 
 #############################################
-# Folder: D:/All_of_mine/C/project/Genius_Invokation_TCG_2/cmake-build-debug
+# Folder: D:/All_of_mine/大学/项目/Genius-Invokation-TCG/cmake-build-debug
 
 build all: phony src/all
 
 # =============================================================================
 
 #############################################
-# Folder: D:/All_of_mine/C/project/Genius_Invokation_TCG_2/cmake-build-debug/src
+# Folder: D:/All_of_mine/大学/项目/Genius-Invokation-TCG/cmake-build-debug/src
 
-build src/all: phony src/Genius_Invokation_TCG_2.exe
+build src/all: phony src/Genius-Invokation-TCG.exe
 
 # =============================================================================
 # Built-in targets
@@ -231,14 +246,14 @@ build src/all: phony src/Genius_Invokation_TCG_2.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja D$:/All_of_mine/C/project/Genius_Invokation_TCG_2/cmake-build-debug/cmake_install.cmake D$:/All_of_mine/C/project/Genius_Invokation_TCG_2/cmake-build-debug/src/cmake_install.cmake: RERUN_CMAKE | CMakeCache.txt CMakeFiles/4.0.2/CMakeCCompiler.cmake CMakeFiles/4.0.2/CMakeRCCompiler.cmake CMakeFiles/4.0.2/CMakeSystem.cmake D$:/All_of_mine/C/project/Genius_Invokation_TCG_2/CMakeLists.txt D$:/All_of_mine/C/project/Genius_Invokation_TCG_2/src/CMakeLists.txt D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCCompiler.cmake.in D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCCompilerABI.c D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCompilerIdDetection.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeDetermineCCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeDetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeDetermineCompilerSupport.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeDetermineRCCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeDetermineSystem.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeFindBinUtils.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeGenericSystem.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeParseImplicitIncludeInfo.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeParseImplicitLinkInfo.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeParseLibraryArchitecture.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeRCCompiler.cmake.in D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeRCInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystem.cmake.in D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeTestCCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeTestCompilerCommon.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeTestRCCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/ADSP-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/ARMCC-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/ARMClang-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/AppleClang-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Borland-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Bruce-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Clang-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Clang-DetermineCompilerInternal.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Compaq-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Cray-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/CrayClang-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Embarcadero-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Fujitsu-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GHS-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-C.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-FindBinUtils.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/HP-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/IAR-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Intel-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/LCC-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/MSVC-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/NVHPC-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/NVIDIA-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/OrangeC-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/PGI-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/PathScale-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/SCO-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/SDCC-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/SunPro-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/TI-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/TIClang-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Tasking-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Watcom-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/XL-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/XLClang-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/zOS-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeDetermineLinkerId.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeInspectCLinker.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/FeatureTesting.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-C.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-C.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-Initialize.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-windres.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/WindowsPaths.cmake
+build build.ninja D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/cmake-build-debug/cmake_install.cmake D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/cmake-build-debug/src/cmake_install.cmake: RERUN_CMAKE | CMakeCache.txt CMakeFiles/4.0.2/CMakeCCompiler.cmake CMakeFiles/4.0.2/CMakeRCCompiler.cmake CMakeFiles/4.0.2/CMakeSystem.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeGenericSystem.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeRCInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-C.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-C.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-C.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-Initialize.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-windres.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/WindowsPaths.cmake D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/CMakeLists.txt D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/src/CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build CMakeCache.txt CMakeFiles/4.0.2/CMakeCCompiler.cmake CMakeFiles/4.0.2/CMakeRCCompiler.cmake CMakeFiles/4.0.2/CMakeSystem.cmake D$:/All_of_mine/C/project/Genius_Invokation_TCG_2/CMakeLists.txt D$:/All_of_mine/C/project/Genius_Invokation_TCG_2/src/CMakeLists.txt D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCCompiler.cmake.in D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCCompilerABI.c D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCompilerIdDetection.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeDetermineCCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeDetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeDetermineCompilerSupport.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeDetermineRCCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeDetermineSystem.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeFindBinUtils.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeGenericSystem.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeParseImplicitIncludeInfo.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeParseImplicitLinkInfo.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeParseLibraryArchitecture.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeRCCompiler.cmake.in D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeRCInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystem.cmake.in D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeTestCCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeTestCompilerCommon.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeTestRCCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/ADSP-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/ARMCC-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/ARMClang-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/AppleClang-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Borland-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Bruce-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Clang-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Clang-DetermineCompilerInternal.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Compaq-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Cray-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/CrayClang-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Embarcadero-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Fujitsu-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GHS-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-C.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-FindBinUtils.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/HP-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/IAR-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Intel-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/LCC-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/MSVC-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/NVHPC-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/NVIDIA-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/OrangeC-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/PGI-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/PathScale-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/SCO-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/SDCC-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/SunPro-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/TI-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/TIClang-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Tasking-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/Watcom-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/XL-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/XLClang-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/zOS-C-DetermineCompiler.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeDetermineLinkerId.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeInspectCLinker.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/FeatureTesting.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-C.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-C.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-Initialize.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-windres.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/WindowsPaths.cmake: phony
+build CMakeCache.txt CMakeFiles/4.0.2/CMakeCCompiler.cmake CMakeFiles/4.0.2/CMakeRCCompiler.cmake CMakeFiles/4.0.2/CMakeSystem.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeGenericSystem.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeRCInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-C.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-C.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-C.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-Initialize.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-windres.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows.cmake D$:/All_of_mine/IDE/CLion$ 2025.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/WindowsPaths.cmake D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/CMakeLists.txt D$:/All_of_mine/大学/项目/Genius-Invokation-TCG/src/CMakeLists.txt: phony
 
 
 #############################################

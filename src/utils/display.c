@@ -1,16 +1,20 @@
 #include "utils/display.h"
+#include "utils/layout.h"
+#include "utils/resource.h"
+#include "game_state.h"
 
+// 向后兼容：保留旧的location变量，但使用布局系统初始化
+static SDL_Rect location_1 = {1900, 1350, 120, 120};
+static SDL_Rect location_2 = {2100, 1350, 120, 120};
+static SDL_Rect location_3 = {2300, 1350, 120, 120};
 
-//location是技能位置
-SDL_Rect location_1 = {
-        1900,1350,120,120
-};
-SDL_Rect location_2 = {
-        2100,1350,120,120
-};
-SDL_Rect location_3 = {
-        2300,1350,120,120
-};
+// 初始化技能按钮位置（使用布局系统）
+static void Init_Skill_Locations(void) {
+    SkillButtonLayout* buttons = Layout_GetSkillButtons();
+    location_1 = buttons->normal_attack;
+    location_2 = buttons->elemental_skill;
+    location_3 = buttons->elemental_burst;
+}
 
 void Draw_Refresh()
 {
@@ -45,71 +49,45 @@ void Draw_Img()
 
 void Draw_Role(int num)
 {
-    SDL_Rect role1 = {
-            roles[1].x,roles[1].y,278,480
-    };
-    SDL_Rect role2 = {
-            roles[2].x,roles[2].y,278,480
-    };
-    SDL_Rect role3 = {
-            roles[3].x,roles[3].y,278,480
-    };
-    SDL_Rect role0 = {
-            roles[0].x,roles[0].y,278,480
-    };
-
-    switch (num){
-        case 1:
-            Load_Bennett();
-        if (game.surf_1==NULL) {
-            HANDLE_ERROR("Draw_Role_surface");
-        }
-        if (app.renderer==NULL){
-            HANDLE_ERROR("Draw_Role_renderer");
-        }
-        SDL_Texture *texture1 = SDL_CreateTextureFromSurface(app.renderer, game.surf_1);
-        SDL_RenderCopy(app.renderer, texture1, NULL, &role1);
-        SDL_DestroyTexture(texture1);
-            return;
-        case 2:
-            Load_Xingqiu();
-            if (game.surf_2==NULL) {
-                HANDLE_ERROR("Draw_Role_surface");
-            }
-            if (app.renderer==NULL){
-                HANDLE_ERROR("Draw_Role_renderer");
-            }
-            SDL_Texture *texture2 = SDL_CreateTextureFromSurface(app.renderer, game.surf_2);
-            SDL_RenderCopy(app.renderer, texture2, NULL, &role2);
-            SDL_DestroyTexture(texture2);
-            return;
-        case 3:
-            Load_Yoimiya();
-        if (game.surf_3==NULL) {
-            HANDLE_ERROR("Draw_Role_surface");
-        }
-        if (app.renderer==NULL){
-            HANDLE_ERROR("Draw_Role_renderer");
-        }
-        SDL_Texture *texture3 = SDL_CreateTextureFromSurface(app.renderer, game.surf_3);
-        SDL_RenderCopy(app.renderer, texture3, NULL, &role3);
-        SDL_DestroyTexture(texture3);
-            return;
-        case 0:
-            Load_Maguu_Kenki();
-        if (game.surf_0==NULL) {
-            HANDLE_ERROR("Draw_Role_surface");
-        }
-        if (app.renderer==NULL){
-            HANDLE_ERROR("Draw_Role_renderer");
-        }
-        SDL_Texture *texture0 = SDL_CreateTextureFromSurface(app.renderer, game.surf_0);
-        SDL_RenderCopy(app.renderer, texture0, NULL, &role0);
-        SDL_DestroyTexture(texture0);
-            return;
-        default:
-            return;
+    if (num < 0 || num > 3) {
+        return;
     }
+    
+    // 使用布局系统获取角色位置
+    RolePosition pos = Layout_GetRolePosition(num);
+    SDL_Rect role_rect = {roles[num].x, roles[num].y, pos.width, pos.height};
+    
+    // 使用资源管理器加载角色图像
+    ResourceType res_type;
+    switch (num) {
+        case 0: res_type = RES_ROLE_MAGUU_KENKI; break;
+        case 1: res_type = RES_ROLE_BENNETT; break;
+        case 2: res_type = RES_ROLE_XINGQIU; break;
+        case 3: res_type = RES_ROLE_YOIMIYA; break;
+        default: return;
+    }
+    
+    SDL_Surface* surface = Resource_Get(res_type);
+    if (surface == NULL) {
+        // 向后兼容：如果资源管理器失败，使用旧方法
+        switch (num) {
+            case 1: Load_Bennett(); surface = game.surf_1; break;
+            case 2: Load_Xingqiu(); surface = game.surf_2; break;
+            case 3: Load_Yoimiya(); surface = game.surf_3; break;
+            case 0: Load_Maguu_Kenki(); surface = game.surf_0; break;
+        }
+    }
+    
+    if (surface == NULL) {
+        HANDLE_ERROR("Draw_Role_surface");
+    }
+    if (app.renderer == NULL) {
+        HANDLE_ERROR("Draw_Role_renderer");
+    }
+    
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(app.renderer, surface);
+    SDL_RenderCopy(app.renderer, texture, NULL, &role_rect);
+    SDL_DestroyTexture(texture);
 }
 
 void Draw_Roles_All()
@@ -125,67 +103,107 @@ void Draw_Roles_All()
 
 void Draw_Choice()
 {
+    // 使用资源管理器
+    SDL_Surface* surface = Resource_Get(RES_UI_CHOICE);
+    if (surface == NULL) {
+        // 向后兼容
         Load_Choice();
-    if (game.surf_other==NULL) {
+        surface = game.surf_other;
+    }
+    
+    if (surface == NULL) {
         HANDLE_ERROR("Draw_Choice");
     }
-    if (app.renderer==NULL){
+    if (app.renderer == NULL) {
         HANDLE_ERROR("Draw_Choice");
     }
 
-        SDL_Rect choice_rect = {choice[choice_i].x, choice[choice_i].y, 75, 75};
-        SDL_Texture *texture = SDL_CreateTextureFromSurface(app.renderer, game.surf_other);
-        SDL_RenderCopy(app.renderer, texture, NULL, &choice_rect);
-        SDL_DestroyTexture(texture);
+    // 使用游戏状态管理器获取选择索引
+    int choice_idx = GameState_GetChoiceIndex();
+    SDL_Rect choice_rect = {choice[choice_idx].x, choice[choice_idx].y, 75, 75};
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(app.renderer, surface);
+    SDL_RenderCopy(app.renderer, texture, NULL, &choice_rect);
+    SDL_DestroyTexture(texture);
 }
 
 void Draw_Skill(int i)
 {
+    // 初始化技能按钮位置（如果还未初始化）
+    static bool locations_initialized = false;
+    if (!locations_initialized) {
+        Init_Skill_Locations();
+        locations_initialized = true;
+    }
+    
+    ResourceType normal_attack_res, skill_res, ultimate_res;
+    
+    // 根据角色确定技能资源
     switch (i) {
-        case 1:
-            Load_Sword_Attack();
-            SDL_Texture *texture1 = SDL_CreateTextureFromSurface(app.renderer, game.surf_other);
-            SDL_RenderCopy(app.renderer, texture1, NULL, &location_1);
-            SDL_DestroyTexture(texture1);
-            Load_Skill_1();
-            SDL_Texture *texture2 = SDL_CreateTextureFromSurface(app.renderer, game.surf_other);
-            SDL_RenderCopy(app.renderer, texture2, NULL, &location_2);
-            SDL_DestroyTexture(texture2);
-            Load_Ultimate_1();
-            SDL_Texture *texture7 = SDL_CreateTextureFromSurface(app.renderer, game.surf_other);
-            SDL_RenderCopy(app.renderer, texture7, NULL, &location_3);
-            SDL_DestroyTexture(texture7);
-            return;
-        case 2:
-            Load_Sword_Attack();
-            SDL_Texture *texture3 = SDL_CreateTextureFromSurface(app.renderer, game.surf_other);
-            SDL_RenderCopy(app.renderer, texture3, NULL, &location_1);
-            SDL_DestroyTexture(texture3);
-            Load_Skill_2();
-            SDL_Texture *texture4 = SDL_CreateTextureFromSurface(app.renderer, game.surf_other);
-            SDL_RenderCopy(app.renderer, texture4, NULL, &location_2);
-            SDL_DestroyTexture(texture4);
-            Load_Ultimate_2();
-            SDL_Texture *texture8 = SDL_CreateTextureFromSurface(app.renderer, game.surf_other);
-            SDL_RenderCopy(app.renderer, texture8, NULL, &location_3);
-            SDL_DestroyTexture(texture8);
-            return;
-        case 3:
-            Load_Bow_Attack();
-            SDL_Texture *texture5 = SDL_CreateTextureFromSurface(app.renderer, game.surf_other);
-            SDL_RenderCopy(app.renderer, texture5, NULL, &location_1);
-            SDL_DestroyTexture(texture5);
-            Load_Skill_3();
-            SDL_Texture *texture6 = SDL_CreateTextureFromSurface(app.renderer, game.surf_other);
-            SDL_RenderCopy(app.renderer, texture6, NULL, &location_2);
-            SDL_DestroyTexture(texture6);
-            Load_Ultimate_3();
-            SDL_Texture *texture9 = SDL_CreateTextureFromSurface(app.renderer, game.surf_other);
-            SDL_RenderCopy(app.renderer, texture9, NULL, &location_3);
-            SDL_DestroyTexture(texture9);
-            return;
+        case 1:  // Bennett
+            normal_attack_res = RES_SKILL_SWORD_ATTACK;
+            skill_res = RES_SKILL_3;
+            ultimate_res = RES_ULTIMATE_1;
+            break;
+        case 2:  // Xingqiu
+            normal_attack_res = RES_SKILL_SWORD_ATTACK;
+            skill_res = RES_SKILL_2;
+            ultimate_res = RES_ULTIMATE_2;
+            break;
+        case 3:  // Yoimiya
+            normal_attack_res = RES_SKILL_BOW_ATTACK;
+            skill_res = RES_SKILL_1;
+            ultimate_res = RES_ULTIMATE_3;
+            break;
         default:
             return;
+    }
+    
+    // 绘制普通攻击
+    SDL_Surface* surf = Resource_Get(normal_attack_res);
+    if (surf == NULL) {
+        // 向后兼容
+        if (i == 3) Load_Bow_Attack();
+        else Load_Sword_Attack();
+        surf = game.surf_other;
+    }
+    if (surf != NULL) {
+        SDL_Texture* texture = SDL_CreateTextureFromSurface(app.renderer, surf);
+        SDL_RenderCopy(app.renderer, texture, NULL, &location_1);
+        SDL_DestroyTexture(texture);
+    }
+    
+    // 绘制元素战技
+    surf = Resource_Get(skill_res);
+    if (surf == NULL) {
+        // 向后兼容
+        switch (i) {
+            case 1: Load_Skill_1(); break;
+            case 2: Load_Skill_2(); break;
+            case 3: Load_Skill_3(); break;
+        }
+        surf = game.surf_other;
+    }
+    if (surf != NULL) {
+        SDL_Texture* texture = SDL_CreateTextureFromSurface(app.renderer, surf);
+        SDL_RenderCopy(app.renderer, texture, NULL, &location_2);
+        SDL_DestroyTexture(texture);
+    }
+    
+    // 绘制元素爆发
+    surf = Resource_Get(ultimate_res);
+    if (surf == NULL) {
+        // 向后兼容
+        switch (i) {
+            case 1: Load_Ultimate_1(); break;
+            case 2: Load_Ultimate_2(); break;
+            case 3: Load_Ultimate_3(); break;
+        }
+        surf = game.surf_other;
+    }
+    if (surf != NULL) {
+        SDL_Texture* texture = SDL_CreateTextureFromSurface(app.renderer, surf);
+        SDL_RenderCopy(app.renderer, texture, NULL, &location_3);
+        SDL_DestroyTexture(texture);
     }
 }
 
@@ -275,47 +293,53 @@ void Draw_Shuangchi()
 
 void Draw_Introduce_All(SDL_Event event,int *view)
 {
+    // 使用布局系统获取实际角色大小
+    RolePosition pos0 = Layout_GetRolePosition(0);
+    RolePosition pos1 = Layout_GetRolePosition(1);
+    RolePosition pos2 = Layout_GetRolePosition(2);
+    RolePosition pos3 = Layout_GetRolePosition(3);
+    
     int flag=0;
     if (event.motion.x>=roles[1].x
-        && event.motion.x<=roles[1].x+278
+        && event.motion.x<=roles[1].x+pos1.width
         && event.motion.y>=roles[1].y
-        && event.motion.y<=roles[1].y+480){
+        && event.motion.y<=roles[1].y+pos1.height){
         flag=1;
     } else if (event.motion.x>=roles[2].x
-               && event.motion.x<=roles[2].x+278
+               && event.motion.x<=roles[2].x+pos2.width
                && event.motion.y>=roles[2].y
-               && event.motion.y<=roles[2].y+480){
+               && event.motion.y<=roles[2].y+pos2.height){
     flag=2;
     }else if (event.motion.x>=roles[3].x
-              && event.motion.x<=roles[3].x+278
+              && event.motion.x<=roles[3].x+pos3.width
               && event.motion.y>=roles[3].y
-              && event.motion.y<=roles[3].y+480) {
+              && event.motion.y<=roles[3].y+pos3.height) {
 flag=3;
     }else if (event.motion.x>=roles[0].x
-              && event.motion.x<=roles[0].x+278
+              && event.motion.x<=roles[0].x+pos0.width
               && event.motion.y>=roles[0].y
-              && event.motion.y<=roles[0].y+480) {
+              && event.motion.y<=roles[0].y+pos0.height) {
 flag=4;
     }
     if (flag)
     {
         while (flag && !app.keyboard[SDL_SCANCODE_ESCAPE] && SDL_WaitEvent(&event)) {
             if (!((event.motion.x >= roles[1].x
-                 && event.motion.x <= roles[1].x + 278
+                 && event.motion.x <= roles[1].x + pos1.width
                  && event.motion.y >= roles[1].y
-                 && event.motion.y <= roles[1].y + 480) ||
+                 && event.motion.y <= roles[1].y + pos1.height) ||
                 (event.motion.x >= roles[2].x
-                 && event.motion.x <= roles[2].x + 278
+                 && event.motion.x <= roles[2].x + pos2.width
                  && event.motion.y >= roles[2].y
-                 && event.motion.y <= roles[2].y + 480) ||
+                 && event.motion.y <= roles[2].y + pos2.height) ||
                 (event.motion.x >= roles[3].x
-                 && event.motion.x <= roles[3].x + 278
+                 && event.motion.x <= roles[3].x + pos3.width
                  && event.motion.y >= roles[3].y
-                 && event.motion.y <= roles[3].y + 480) ||
+                 && event.motion.y <= roles[3].y + pos3.height) ||
                 (event.motion.x >= roles[0].x
-                 && event.motion.x <= roles[0].x + 278
+                 && event.motion.x <= roles[0].x + pos0.width
                  && event.motion.y >= roles[0].y
-                 && event.motion.y <= roles[0].y + 480))) {
+                 && event.motion.y <= roles[0].y + pos0.height))) {
                 flag = 0;
             }
             switch (flag) {
@@ -905,22 +929,69 @@ void Vedio_Common()
 
 void Vedio_Attack_1(Role *role)
 {
-    for (;role->y>=950;role->y-=4){
+    // 使用布局系统获取缩放比例
+    float scale_y = Layout_GetScaleY();
+    
+    // 获取角色的初始位置（从布局系统）
+    RolePosition role_pos = Layout_GetRolePosition(role->num);
+    int base_y = role_pos.y;
+    
+    // 原始动画：从base_y移动到950，再回到998，然后回到base_y
+    // 缩放后的目标位置
+    int target_y1 = (int)(950 * scale_y);  // 向上移动的目标
+    int target_y2 = (int)(998 * scale_y);  // 向下移动的目标
+    int step = (int)(4 * scale_y);
+    if (step < 1) step = 1;
+    
+    // 计算相对于base_y的偏移
+    int offset1 = base_y - target_y1;  // 向上移动的距离
+    int offset2 = target_y2 - base_y;  // 向下移动的距离
+    
+    // 向上移动
+    for (;role->y >= base_y - offset1; role->y -= step){
         Vedio_Common();
     }
-    for (;role->y<=998;role->y+=4){
+    // 向下移动
+    for (;role->y <= base_y + offset2; role->y += step){
         Vedio_Common();
     }
+    // 回到原位
+    for (;role->y > base_y; role->y -= step){
+        Vedio_Common();
+    }
+    role->y = base_y;  // 确保回到准确位置
     Vedio_Common();
 }
 
 void Vedio_Attack_0(int *y)
 {
-    for (;*y<=250;*y+=4){
+    // 使用布局系统获取缩放比例
+    float scale_y = Layout_GetScaleY();
+    
+    // 获取敌人角色的初始位置
+    RolePosition enemy_pos = Layout_GetRolePosition(0);
+    int base_y = enemy_pos.y;
+    
+    // 原始动画：从base_y移动到250，再回到200，然后回到base_y
+    // 缩放后的目标位置
+    int target_y1 = (int)(200 * scale_y);  // 向上移动的目标
+    int target_y2 = (int)(250 * scale_y);  // 向下移动的目标
+    int step = (int)(4 * scale_y);
+    if (step < 1) step = 1;
+    
+    // 计算相对于base_y的偏移
+    int offset1 = base_y - target_y1;  // 向上移动的距离
+    int offset2 = target_y2 - base_y;  // 向下移动的距离
+    
+    // 向下移动
+    for (;*y <= base_y + offset2; *y += step){
         Vedio_Common();
     }
-    for (;*y>=200;*y-=4){
+    // 向上移动
+    for (;*y >= base_y - offset1; *y -= step){
         Vedio_Common();
     }
+    // 确保回到准确位置
+    *y = base_y;
     Vedio_Common();
 }

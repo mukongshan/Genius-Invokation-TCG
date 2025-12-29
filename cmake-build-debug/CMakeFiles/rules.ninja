@@ -6,7 +6,7 @@
 # It is included in the main 'build.ninja'.
 
 # =============================================================================
-# Project: Genius_Invokation_TCG_2
+# Project: Genius_Invokation_TCG
 # Configurations: Debug
 # =============================================================================
 # =============================================================================
@@ -22,7 +22,7 @@ rule CUSTOM_COMMAND
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__Genius_Invokation_TCG_2_unscanned_Debug
+rule C_COMPILER__Genius-Invokation-TCG_unscanned_Debug
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}"D:\All_of_mine\IDE\CLion 2025.2\bin\mingw\bin\gcc.exe" $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -32,7 +32,7 @@ rule C_COMPILER__Genius_Invokation_TCG_2_unscanned_Debug
 #############################################
 # Rule for linking C executable.
 
-rule C_EXECUTABLE_LINKER__Genius_Invokation_TCG_2_Debug
+rule C_EXECUTABLE_LINKER__Genius-Invokation-TCG_Debug
   command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && "D:\All_of_mine\IDE\CLion 2025.2\bin\mingw\bin\gcc.exe" $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking C executable $TARGET_FILE
   restat = $RESTAT
@@ -42,7 +42,7 @@ rule C_EXECUTABLE_LINKER__Genius_Invokation_TCG_2_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = "D:\All_of_mine\IDE\CLion 2025.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\All_of_mine\C\project\Genius_Invokation_TCG_2 -BD:\All_of_mine\C\project\Genius_Invokation_TCG_2\cmake-build-debug
+  command = "D:\All_of_mine\IDE\CLion 2025.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\All_of_mine\大学\项目\Genius-Invokation-TCG -BD:\All_of_mine\大学\项目\Genius-Invokation-TCG\cmake-build-debug
   description = Re-running CMake...
   generator = 1
 

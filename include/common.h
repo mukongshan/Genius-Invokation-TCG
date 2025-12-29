@@ -8,11 +8,17 @@
 #include "stdio.h"
 #include "stdbool.h"
 #include "stdlib.h"
+#include "string.h"
 
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_image.h"
 #include "SDL2/SDL_ttf.h"
 #include "SDL2/SDL_mixer.h"
+
+// 新系统头文件
+#include "game_state.h"
+#include "utils/layout.h"
+#include "utils/resource.h"
 
 #define HANDLE_ERROR(msg) printf(msg": %s\n",SDL_GetError()); \
     exit(EXIT_FAILURE)

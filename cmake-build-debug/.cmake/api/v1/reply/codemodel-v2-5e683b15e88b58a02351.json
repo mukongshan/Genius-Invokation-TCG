@@ -43,7 +43,7 @@
 						0,
 						1
 					],
-					"name" : "Genius_Invokation_TCG_2",
+					"name" : "Genius_Invokation_TCG",
 					"targetIndexes" : 
 					[
 						0
@@ -54,9 +54,9 @@
 			[
 				{
 					"directoryIndex" : 1,
-					"id" : "Genius_Invokation_TCG_2::@145eef247bfb46b6828c",
-					"jsonFile" : "target-Genius_Invokation_TCG_2-Debug-0290f8d7deea63229994.json",
-					"name" : "Genius_Invokation_TCG_2",
+					"id" : "Genius-Invokation-TCG::@145eef247bfb46b6828c",
+					"jsonFile" : "target-Genius-Invokation-TCG-Debug-c70c57b76c30dafb377c.json",
+					"name" : "Genius-Invokation-TCG",
 					"projectIndex" : 0
 				}
 			]
@@ -65,8 +65,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/All_of_mine/C/project/Genius_Invokation_TCG_2/cmake-build-debug",
-		"source" : "D:/All_of_mine/C/project/Genius_Invokation_TCG_2"
+		"build" : "D:/All_of_mine/\u5927\u5b66/\u9879\u76ee/Genius-Invokation-TCG/cmake-build-debug",
+		"source" : "D:/All_of_mine/\u5927\u5b66/\u9879\u76ee/Genius-Invokation-TCG"
 	},
 	"version" : 
 	{
